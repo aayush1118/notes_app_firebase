@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
+
+body{
+    background-color: bisque;
+    font-family: 'Work Sans', sans-serif;
+    display: grid;
+    place-items: center middle;
+}
+
+.container{
+    max-width: 30em;
+    min-width: 50vw;
+    margin: 0 auto;
+    border: 2px solid #232323;
+    border-radius: 1rem;
+    background-color: #fefefe;
+    color: #232323;
+    display: grid;
+    place-items: center;
+}
+
+.container > h1{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.container > .new-form{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+}
+
+.container > .new-form > label{
+    margin-top: 0.5em;
+    font-size: 0.9em;
+}
+
+.container > .new-form > input{
+    border: 1px solid #808080;
+}
+
+.container > .new-form > button{
+    color: white;
+    padding: 0.5em;
+    font-weight: 600;
+    margin-top: 0.5em ;
+    margin-bottom: 1em;
+    background-color: #ff693c;
+    border-radius: 0.6em;
+    border: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1em;
+    width: fit-content;
+}
+
+.container > .note{
+    max-width: 90%;
+}
+
+.container > .note > .author {
+    font-weight: 500;
+    margin-top: 0;
+    text-align: right;
+}

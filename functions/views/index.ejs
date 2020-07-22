@@ -1,0 +1,29 @@
+<%- include ("partials/header") %> 
+
+<div class="container">
+    <h1>Take some Notes </h1>
+
+    <form class="new-form" action="./" method="post">
+        <label for="content">Note</label>
+        <textarea name="content" id="" cols="10" rows="3"></textarea>
+        <label for="author">Your Name</label>
+        <input type="text" name="author">
+        <button type="submit">Create Note</button>
+    </form>
+
+    <div class="note">
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, illo!</p>
+        <p class="author">-Author</p>
+    </div>
+    <div class="note">
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, illo!</p>
+        <p class="author">-Author</p>
+    </div>
+    <div class="note">
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, illo!</p>
+        <p class="author">-Author</p>
+    </div>
+
+</div>
+
+<%- include ("partials/footer") %> 
