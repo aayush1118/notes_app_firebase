@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
 
 body{
-    background-color: bisque;
+    background-color: #E77165;
     font-family: 'Work Sans', sans-serif;
     display: grid;
     place-items: center middle;
+    animation: bg-color 40s linear infinite alternate forwards;
 }
 
 .container{
     max-width: 30em;
-    min-width: 50vw;
+    min-width: 60vw;
     margin: 0 auto;
     border: 2px solid #232323;
     border-radius: 1rem;
@@ -17,6 +18,7 @@ body{
     color: #232323;
     display: grid;
     place-items: center;
+    margin-top: 3em;
 }
 
 .container > h1{
@@ -37,8 +39,14 @@ body{
 
 .container > .new-form > input{
     border: 1px solid #808080;
+    border-radius: 0.5em;
+    padding: 0.5em;
 }
-
+.container > .new-form > textarea{
+    border: 1px solid #808080;
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
 .container > .new-form > button{
     color: white;
     padding: 0.5em;
@@ -54,11 +62,62 @@ body{
 }
 
 .container > .note{
-    max-width: 90%;
+    width: 80%;
+    border-top:  1px solid #00000020;
+    margin: 0.5em 0;
 }
 
-.container > .note > .author {
+/* .container > .note > .content {
+    margin: 0.5em 0 0 0;
+
+} */
+.container > .note > .right {
     font-weight: 500;
-    margin-top: 0;
     text-align: right;
+    margin: 0 0 1em 0;
+}
+.container > .note > .right > .author {
+    color: #000000d0;
+    text-transform: capitalize;
+}
+
+.container > .note > .right > form > .del-btn{
+    background-color: rgb(255, 72, 72);
+    font-family: 'Work Sans', sans-serif;
+    padding: 0.3em;
+    border: 1px solid #00000036;
+    color: white;
+    border-radius: 1em;
+}
+
+.container > .note > .right > form > .update-btn{
+    background-color: rgb(67, 231, 67);
+    font-family: 'Work Sans', sans-serif;
+    padding: 0.3em;
+    border: 1px solid #00000036;
+    color: white;
+    border-radius: 1em;
+}
+
+.container > .note > form > textarea{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.1em;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    resize: none;
+}
+
+.container > .note > form > textarea:focus{
+    background-color: #f0f0f0;
+}
+
+@keyframes bg-color{
+    0% {background-color: #E77165;}
+    25% {background-color: #21778D;}
+    50% {background-color: #85B5D2;}
+    75% {background-color: #FD8FE3;}
+    100%{background-color: #962E14;}
 }

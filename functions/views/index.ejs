@@ -2,8 +2,7 @@
 
 <div class="container">
     <h1>Take some Notes </h1>
-
-    <form class="new-form" action="./" method="post">
+    <form class="new-form" action="./notes" method="post">
         <label for="content">Note</label>
         <textarea name="content" id="" cols="10" rows="3"></textarea>
         <label for="author">Your Name</label>
@@ -11,19 +10,21 @@
         <button type="submit">Create Note</button>
     </form>
 
-    <div class="note">
-        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, illo!</p>
-        <p class="author">-Author</p>
-    </div>
-    <div class="note">
-        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, illo!</p>
-        <p class="author">-Author</p>
-    </div>
-    <div class="note">
-        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, illo!</p>
-        <p class="author">-Author</p>
-    </div>
-
+    <% notes.forEach(element => {%> 
+        <div class="note">
+            <form id="update" action="./notes/update/<%= element.id %>?_method=PUT" method="post">
+                <textarea name="note"><%= element.content %></textarea>
+            </form>
+            <!-- <p class="content"><%= element.content %></p> -->
+            <div class="right">
+                <p class="author">- <%= element.author %></p>
+                <form action="./notes/delete/<%= element.id %>?_method=DELETE" method="POST">
+                    <button class="del-btn"type="submit">delete</button>
+                    <button form="update" class="update-btn" type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+    <% }); %>
 </div>
 
 <%- include ("partials/footer") %> 
