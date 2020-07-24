@@ -6,10 +6,12 @@ const methodOverride = require("method-override");
 // const bodyParser     = require("body-parser");
 
 var serviceAccount = require("./permissions.json");
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://notes-app-45ba6.firebaseio.com"
+  databaseURL: "https://test-1-a8cdf.firebaseio.com"
 });
+
 const db = admin.firestore();
 
 // app.use(bodyParser.urlencoded({extended:true}));
@@ -45,16 +47,16 @@ app.get('/notes', (req, res) => {
             let query = db.collection('notes');
             let response = [];
             await query.get().then(querySnapshot => {
-            let docs = querySnapshot.docs;
-            for (let doc of docs) {
-                const selectedItem = {
-                    id: doc.id,
-                    content: doc.data().note,
-                    author: doc.data().author
-                }
-                response.push(selectedItem);
-            }
-            });
+                let docs = querySnapshot.docs;
+                for (let doc of docs) {
+                    const selectedItem = {
+                        id: doc.id,
+                        content: doc.data().note,
+                        author: doc.data().author
+                    }
+                    response.push(selectedItem);
+                }    return null;
+                });
             return res.render('index' ,{notes :response});
         } catch (error) {
             console.log(error);
@@ -71,7 +73,7 @@ app.put('/notes/update/:note_id', (req, res) => {
         await document.update({
             note: req.body.note
         });
-        return res.redirect('/notes-app-45ba6/us-central1/app/notes');
+        return res.redirect('/test-1-a8cdf/us-central1/app/notes');
     } catch (error) {
         console.log(error);
         return res.send(error);
